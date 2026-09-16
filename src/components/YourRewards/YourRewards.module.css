@@ -1,0 +1,171 @@
+.section {
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #17171c;
+}
+
+.header p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #73767c;
+}
+
+.historyButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 7px;
+  border: none;
+  background: transparent;
+  color: #6540c7;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 12px;
+}
+
+/* ================= BALANCE ================= */
+
+.balanceCard {
+  padding: 14px;
+  border: 1px solid #e5e3ea;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cardTop span,
+.smallCard > span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #73767c;
+}
+
+.icon {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #f1ebff;
+  color: #6540c7;
+}
+
+.balanceCard > strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #17171c;
+}
+
+.balanceCard > p {
+  margin: 0;
+  font-size: 11px;
+  color: #35a36f;
+}
+
+.redeem {
+  width: 100%;
+  height: 29px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #6540c7;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.redeem:hover {
+  background: #5735b0;
+}
+
+/* ================= SMALL CARDS ================= */
+
+.smallCard {
+  padding: 14px;
+  border: 1px solid #e5e3ea;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.smallIcon {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  background: #f1ebff;
+  color: #6540c7;
+}
+
+.smallCard > strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #17171c;
+}
+
+.smallCard > p {
+  margin: 3px 0 0;
+  font-size: 11px;
+  color: #73767c;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .balanceCard {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .balanceCard {
+    grid-column: span 1;
+  }
+}

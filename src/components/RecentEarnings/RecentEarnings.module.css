@@ -1,0 +1,108 @@
+.section {
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #17171c;
+}
+
+.header p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #73767c;
+}
+
+.viewAll {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 7px;
+  border: none;
+  background: transparent;
+  color: #6540c7;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e3ea;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ================= EARNING ================= */
+
+.earning {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border-bottom: 1px solid #eeeef1;
+}
+
+.earning:last-child {
+  border-bottom: none;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #f1ebff;
+  color: #6540c7;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.info h3 {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #27272d;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #85878d;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.amount {
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+  color: #35a36f;
+}

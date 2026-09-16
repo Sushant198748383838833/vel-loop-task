@@ -1,0 +1,198 @@
+.navbar {
+  width: 100%;
+  height: 72px;
+  background: #080a0f;
+  border-bottom: 1px solid #1c2029;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  min-width: 190px;
+}
+
+.logoMark {
+  font-size: 32px;
+  font-weight: 900;
+  color: #f5a900;
+  line-height: 1;
+}
+
+.logo h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo div span {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #f5a900;
+  margin-top: 2px;
+}
+
+/* Navigation */
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+}
+
+.navLinks a {
+  position: relative;
+  padding: 26px 2px;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.navLinks a:hover {
+  color: #ffffff;
+}
+
+.navLinks a.active {
+  color: #a855f7;
+}
+
+.navLinks a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #8b5cf6;
+  box-shadow: 0 0 12px #8b5cf6;
+}
+
+/* Right actions */
+
+.actions {
+  min-width: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+/* Balance */
+
+.balance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 13px;
+
+  border: 1px solid #292e38;
+  border-radius: 22px;
+
+  background: #0d1017;
+
+  color: #f3f4f6;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.veIcon {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #111827;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* Notification */
+
+.notification {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #292e38;
+  border-radius: 50%;
+
+  background: #0d1017;
+  color: #d1d5db;
+
+  cursor: pointer;
+}
+
+.notification:hover {
+  color: #ffffff;
+  border-color: #7c3aed;
+}
+
+/* Notification red dot */
+
+.notificationDot {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+/* Profile */
+
+.profile {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #111827;
+  border: 1px solid #343a46;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+}
