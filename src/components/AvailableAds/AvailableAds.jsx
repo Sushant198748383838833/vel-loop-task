@@ -1,65 +1,16 @@
-import { Clock3, Play, RefreshCw } from "lucide-react";
+import { Clock3, Play, RefreshCw, CheckCircle2, LoaderCircle } from "lucide-react";
 import styles from "./AvailableAds.module.css";
 
-const ads = [
-  {
-    id: 1,
-    title: "FinVerse Pro",
-    description: "The future of smart finance management.",
-    duration: "45 sec",
-    reward: "+38 VEs",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-  },
-  {
-    id: 2,
-    title: "StrideX",
-    description: "Step up your game with ultimate comfort.",
-    duration: "30 sec",
-    reward: "+25 VEs",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
-  },
-  {
-    id: 3,
-    title: "Melody Beats",
-    description: "Feel every beat. Anytime. Anywhere.",
-    duration: "60 sec",
-    reward: "+50 VEs",
-    image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800",
-    bonus: "Limited Time Bonus!",
-  },
-  {
-    id: 4,
-    title: "DriveEZ",
-    description: "Book rides easier than ever before.",
-    duration: "40 sec",
-    reward: "+20 VEs",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800",
-  },
-  {
-    id: 5,
-    title: "SafeNet VPN",
-    description: "Secure. Private. Lightning fast.",
-    duration: "30 sec",
-    reward: "+18 VEs",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
-  },
-  {
-    id: 6,
-    title: "ShopJoy",
-    description: "Best deals. Big savings. Just for you.",
-    duration: "25 sec",
-    reward: "+15 VEs",
-    image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800",
-  },
-];
+const AvailableAds = ({ ads, onWatchAd, lastReward }) => {
+  const availableCount = ads.filter((ad) => ad.status !== "completed").length;
+  const isAnyWatching = ads.some((ad) => ad.status === "watching");
 
-const AvailableAds = () => {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
         <div className={styles.titleArea}>
           <h2>Available Ads</h2>
-          <span className={styles.count}>6 Ads Available</span>
+          <span className={styles.count}>{availableCount} Ads Available</span>
         </div>
 
         <div className={styles.refresh}>
@@ -68,62 +19,96 @@ const AvailableAds = () => {
         </div>
       </div>
 
-      <div className={styles.adsGrid}>
-        {ads.map((ad) => (
-          <article className={styles.adCard} key={ad.id}>
-            <div className={styles.adContent}>
-              <div className={styles.imageWrapper}>
-                <img
-                  src={ad.image}
-                  alt={ad.title}
-                  className={styles.image}
-                />
+      {isAnyWatching && (
+        <div className={styles.loaderBanner}>
+          <LoaderCircle className={styles.spinning} size={16} />
+          Loading ad experience...
+        </div>
+      )}
 
-                <span className={styles.sponsored}>
-                  Sponsored
-                </span>
+      {lastReward && (
+        <div className={styles.rewardSuccess}>
+          <CheckCircle2 size={18} />
+          Reward successfully earned! +{lastReward.reward} VEs from {lastReward.title}
+        </div>
+      )}
 
-                {ad.bonus && (
-                  <span className={styles.bonus}>
-                    {ad.bonus}
-                  </span>
-                )}
-              </div>
+      {availableCount === 0 ? (
+        <div className={styles.emptyState}>
+          <div className={styles.emptyIcon}>✓</div>
+          <h3>No Ads Available</h3>
+          <p>All ads have been watched for today. Check back later for new rewards.</p>
+        </div>
+      ) : (
+        <div className={styles.adsGrid}>
+          {ads.map((ad) => {
+            const isCompleted = ad.status === "completed";
+            const isWatching = ad.status === "watching";
 
-              <div className={styles.details}>
-                <h3>{ad.title}</h3>
+            return (
+              <article className={styles.adCard} key={ad.id}>
+                <div className={styles.adContent}>
+                  <div className={`${styles.imageWrapper} ${styles[ad.tone]}`}>
+                    <div className={styles.logoBadge}>{ad.icon}</div>
+                    <span className={styles.category}>{ad.category}</span>
+                    {ad.reward >= 40 && <span className={styles.bonus}>Bonus</span>}
+                  </div>
 
-                <p>{ad.description}</p>
+                  <div className={styles.details}>
+                    <div className={styles.titleRow}>
+                      <h3>{ad.title}</h3>
+                      {!isCompleted && (
+                        <span className={styles.statusPill}>Available</span>
+                      )}
+                    </div>
 
-                <div className={styles.meta}>
-                  <span className={styles.duration}>
-                    <Clock3 size={12} />
-                    {ad.duration}
-                  </span>
+                    <p>{ad.description}</p>
 
-                  <span className={styles.reward}>
-                    {ad.reward}
-                  </span>
+                    <div className={styles.meta}>
+                      <span className={styles.duration}>
+                        <Clock3 size={12} />
+                        {ad.duration} sec
+                      </span>
+
+                      <span className={styles.reward}>+{ad.reward} VEs</span>
+                    </div>
+
+                    <div className={styles.stateRow}>
+                      <span className={`${styles.statusDot} ${isCompleted ? styles.completedDot : ""}`} />
+                      {isCompleted ? "Completed" : "Available now"}
+                    </div>
+                  </div>
                 </div>
 
-                <div className={styles.available}>
-                  <span></span>
-                  Available
-                </div>
-              </div>
-            </div>
+                <button
+                  className={`${styles.watchButton} ${isCompleted ? styles.completedButton : ""} ${isWatching ? styles.loadingButton : ""}`}
+                  onClick={() => onWatchAd(ad.id)}
+                  disabled={isCompleted || isWatching}
+                >
+                  {isWatching ? (
+                    <>
+                      <LoaderCircle className={styles.spinning} size={14} />
+                      Watching...
+                    </>
+                  ) : isCompleted ? (
+                    <>
+                      <CheckCircle2 size={14} />
+                      Reward Claimed
+                    </>
+                  ) : (
+                    <>
+                      <Play size={14} fill="currentColor" />
+                      Watch Advertisement
+                    </>
+                  )}
+                </button>
+              </article>
+            );
+          })}
+        </div>
+      )}
 
-            <button className={styles.watchButton}>
-              <Play size={14} fill="currentColor" />
-              Watch Advertisement
-            </button>
-          </article>
-        ))}
-      </div>
-
-      <p className={styles.noMore}>
-        No more ads? Check back later for new advertisements.
-      </p>
+      <p className={styles.noMore}>No more ads? Check back later for new advertisements.</p>
     </section>
   );
 };

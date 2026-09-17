@@ -1,129 +1,126 @@
 .section {
   width: 100%;
-  margin-top: 24px;
+  margin-top: 8px;
 }
-
-/* ================= HEADER ================= */
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .titleArea {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
 }
 
 .titleIcon {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background: #fff2df;
-  color: #dc8a22;
+  border-radius: 12px;
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
 }
 
 .titleArea h2 {
   margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  color: #17171c;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
 }
 
 .titleArea p {
-  margin: 2px 0 0;
-  font-size: 12px;
-  color: #73767c;
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: #9aa3b4;
 }
 
 .streakCount {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  background: #fff2df;
-  color: #cf7c16;
-  font-size: 12px;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.13);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  font-size: 0.74rem;
   font-weight: 700;
 }
 
-/* ================= CARD ================= */
-
 .card {
-  padding: 13px;
-  background: #ffffff;
-  border: 1px solid #e5e3ea;
-  border-radius: 10px;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(17, 19, 27, 0.96), rgba(12, 14, 20, 0.96));
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 24px 40px rgba(2, 6, 23, 0.18);
 }
-
-/* ================= DAYS ================= */
 
 .days {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .day {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .dayName {
-  font-size: 12px;
+  font-size: 0.7rem;
   font-weight: 600;
-  color: #73767c;
+  color: #8d93a5;
 }
 
 .dateCircle {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid #dedbe5;
-  color: #73767c;
-  font-size: 12px;
-  font-weight: 600;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  color: #dfe8f6;
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: rgba(15, 17, 24, 0.7);
 }
 
 .completed .dateCircle {
-  border-color: #6540c7;
-  background: #6540c7;
+  border-color: rgba(167, 139, 250, 0.38);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.8), rgba(168, 85, 247, 0.82));
   color: #ffffff;
 }
-
-/* ================= REWARD ================= */
 
 .reward {
   display: flex;
   align-items: center;
-  gap: 9px;
-  margin-top: 13px;
-  padding-top: 12px;
-  border-top: 1px solid #eeeef1;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
 }
 
 .rewardIcon {
-  width: 31px;
-  height: 31px;
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
-  background: #f1ebff;
-  color: #6540c7;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.12);
+  color: #d8c7ff;
 }
 
 .rewardText {
@@ -135,41 +132,43 @@
 }
 
 .rewardText strong {
-  font-size: 12px;
-  color: #27272d;
+  font-size: 0.75rem;
+  color: #f8fafc;
 }
 
 .rewardText span {
-  font-size: 12px;
-  color: #73767c;
+  font-size: 0.72rem;
+  color: #9aa3b4;
 }
 
 .watchButton {
-  height: 29px;
-  padding: 0 11px;
-  border: 1px solid #9673d9;
-  border-radius: 5px;
-  background: #ffffff;
-  color: #6540c7;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid rgba(167, 139, 250, 0.42);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(59, 130, 246, 0.08));
+  color: #f3e8ff;
   font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .watchButton:hover {
-  background: #f5f0ff;
+  box-shadow: 0 10px 18px rgba(124, 58, 237, 0.18);
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media (max-width: 600px) {
-  .reward {
+  .header {
+    flex-direction: column;
     align-items: flex-start;
+  }
+
+  .reward {
     flex-wrap: wrap;
   }
 
   .watchButton {
-    margin-left: 40px;
+    width: 100%;
   }
 }

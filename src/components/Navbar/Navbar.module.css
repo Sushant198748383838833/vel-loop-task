@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
 /* Logo */
@@ -28,6 +29,7 @@
   text-decoration: none;
   color: #ffffff;
   min-width: 190px;
+  flex-shrink: 0;
 }
 
 .logoMark {
@@ -58,7 +60,9 @@
 .navLinks {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 38px;
+  flex: 1;
 }
 
 .navLinks a {
@@ -69,6 +73,7 @@
   font-size: 13px;
   font-weight: 500;
   transition: color 0.25s ease;
+  white-space: nowrap;
 }
 
 .navLinks a:hover {
@@ -98,6 +103,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 14px;
+  flex-shrink: 0;
 }
 
 /* Balance */
@@ -195,4 +201,104 @@
 
   font-size: 12px;
   font-weight: 600;
+}
+
+.balanceText {
+  display: inline-block;
+}
+
+@media (max-width: 1100px) {
+  .container {
+    padding: 0 18px;
+    gap: 12px;
+  }
+
+  .navLinks {
+    gap: 18px;
+  }
+
+  .logo {
+    min-width: 0;
+  }
+
+  .actions {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  .navbar {
+    height: auto;
+    min-height: 72px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .logo {
+    width: auto;
+  }
+
+  .navLinks {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    padding-bottom: 4px;
+  }
+
+  .navLinks a {
+    padding: 8px 0;
+  }
+
+  .balanceText {
+    display: none;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .balance,
+  .notification,
+  .profile {
+    transform: scale(0.96);
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    justify-content: space-between;
+    padding: 10px 12px;
+  }
+
+  .logo div {
+    display: none;
+  }
+
+  .logoMark {
+    font-size: 28px;
+  }
+
+  .navLinks {
+    justify-content: center;
+    gap: 8px 14px;
+  }
+
+  .navLinks a {
+    font-size: 11px;
+  }
+
+  .balance {
+    padding: 8px 10px;
+  }
+
+  .notification,
+  .profile {
+    width: 34px;
+    height: 34px;
+  }
 }

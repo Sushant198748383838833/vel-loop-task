@@ -1,28 +1,34 @@
-import { ShieldCheck } from "lucide-react";
+import { ArrowDown, Banknote, CheckCircle2, PlayCircle } from "lucide-react";
 import styles from "./RewardsInfo.module.css";
+
+const steps = [
+  { title: "Watch Advertisement", icon: <PlayCircle size={18} /> },
+  { title: "Earn VEs", icon: <CheckCircle2 size={18} /> },
+  { title: "Convert to Cash", icon: <Banknote size={18} /> },
+  { title: "Withdraw to Bank", icon: <ArrowDown size={18} /> },
+];
 
 const RewardsInfo = () => {
   return (
     <section className={styles.rewardsInfo}>
-      <div className={styles.left}>
-        <div className={styles.icon}>
-          <ShieldCheck size={24} />
-        </div>
-
-        <div className={styles.content}>
-          <h3>Your VEs. Your Rewards.</h3>
-
-          <p>
-            Earn VEs by watching ads. Convert them into real cash and withdraw
-            to your linked bank account once you meet the minimum withdrawal
-            conditions.
-          </p>
+      <div className={styles.header}>
+        <div className={styles.headingWrap}>
+          <span className={styles.kicker}>Reward Flow</span>
+          <h3>How rewards move from ads to cash</h3>
         </div>
       </div>
 
-      <button className={styles.learnMore}>
-        Learn More
-      </button>
+      <div className={styles.stepsGrid}>
+        {steps.map((step, index) => (
+          <div className={styles.stepCard} key={step.title}>
+            <div className={styles.iconWrap}>{step.icon}</div>
+            <div className={styles.stepContent}>
+              <span className={styles.stepNumber}>0{index + 1}</span>
+              <p>{step.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

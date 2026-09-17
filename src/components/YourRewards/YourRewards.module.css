@@ -1,154 +1,143 @@
 .section {
   width: 100%;
-  margin-top: 24px;
+  margin-top: 8px;
 }
-
-/* ================= HEADER ================= */
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .header h2 {
   margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  color: #17171c;
+  color: #f8fafc;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .header p {
-  margin: 3px 0 0;
-  font-size: 12px;
-  color: #73767c;
+  margin: 4px 0 0;
+  font-size: 0.73rem;
+  color: #9aa3b4;
 }
 
 .historyButton {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 5px 7px;
-  border: none;
-  background: transparent;
-  color: #6540c7;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
+  color: #d8c7ff;
   font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   cursor: pointer;
 }
-
-/* ================= GRID ================= */
 
 .grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 12px;
+  gap: 16px;
 }
 
-/* ================= BALANCE ================= */
-
-.balanceCard {
-  padding: 14px;
-  border: 1px solid #e5e3ea;
-  border-radius: 10px;
-  background: #ffffff;
+.balanceCard,
+.smallCard {
+  padding: 18px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(17, 19, 27, 0.96), rgba(12, 14, 20, 0.96));
+  box-shadow: 0 18px 34px rgba(2, 6, 23, 0.18);
 }
 
 .cardTop {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 9px;
+  margin-bottom: 12px;
 }
 
 .cardTop span,
 .smallCard > span {
-  font-size: 12px;
-  font-weight: 600;
-  color: #73767c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #9aa3b4;
 }
 
-.icon {
-  width: 31px;
-  height: 31px;
+.icon,
+.smallIcon {
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
-  background: #f1ebff;
-  color: #6540c7;
+  border-radius: 12px;
+  background: rgba(124, 58, 237, 0.14);
+  color: #d8c7ff;
 }
 
 .balanceCard > strong {
   display: block;
-  margin-bottom: 3px;
-  font-size: 24px;
-  font-weight: 700;
-  color: #17171c;
+  margin-bottom: 4px;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  color: #f8fafc;
 }
 
 .balanceCard > p {
   margin: 0;
-  font-size: 11px;
-  color: #35a36f;
+  font-size: 0.7rem;
+  color: #4ade80;
 }
 
 .redeem {
   width: 100%;
-  height: 29px;
-  margin-top: 12px;
+  height: 38px;
+  margin-top: 14px;
   border: none;
-  border-radius: 5px;
-  background: #6540c7;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   color: #ffffff;
   font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.74rem;
+  font-weight: 800;
   cursor: pointer;
 }
 
 .redeem:hover {
-  background: #5735b0;
+  box-shadow: 0 12px 20px rgba(124, 58, 237, 0.28);
 }
 
-/* ================= SMALL CARDS ================= */
-
 .smallCard {
-  padding: 14px;
-  border: 1px solid #e5e3ea;
-  border-radius: 10px;
-  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .smallIcon {
-  width: 31px;
-  height: 31px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 10px;
-  border-radius: 7px;
-  background: #f1ebff;
-  color: #6540c7;
 }
 
 .smallCard > strong {
   display: block;
   margin-top: 8px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #17171c;
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #f8fafc;
 }
 
 .smallCard > p {
-  margin: 3px 0 0;
-  font-size: 11px;
-  color: #73767c;
+  margin: 4px 0 0;
+  font-size: 0.7rem;
+  color: #9aa3b4;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 800px) {
   .grid {

@@ -1,61 +1,59 @@
 .section {
   width: 100%;
-  margin-top: 24px;
+  margin-top: 8px;
 }
-
-/* ================= HEADER ================= */
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: 12px;
 }
 
 .header h2 {
   margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  color: #17171c;
+  color: #f8fafc;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .header p {
-  margin: 3px 0 0;
-  font-size: 12px;
-  color: #73767c;
+  margin: 4px 0 0;
+  font-size: 0.73rem;
+  color: #9aa3b4;
 }
 
 .viewAll {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 5px 7px;
-  border: none;
-  background: transparent;
-  color: #6540c7;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.08);
+  color: #d8c7ff;
   font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
-/* ================= CARD ================= */
-
 .card {
-  background: #ffffff;
-  border: 1px solid #e5e3ea;
-  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(17, 19, 27, 0.96), rgba(12, 14, 20, 0.96));
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.18);
 }
-
-/* ================= EARNING ================= */
 
 .earning {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 11px 13px;
-  border-bottom: 1px solid #eeeef1;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .earning:last-child {
@@ -63,15 +61,15 @@
 }
 
 .icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
-  background: #f1ebff;
-  color: #6540c7;
+  border-radius: 10px;
+  background: rgba(124, 58, 237, 0.14);
+  color: #d8c7ff;
 }
 
 .info {
@@ -81,28 +79,28 @@
 
 .info h3 {
   margin: 0 0 4px;
-  font-size: 13px;
+  font-size: 0.88rem;
   font-weight: 700;
-  color: #27272d;
+  color: #f8fafc;
 }
 
 .meta {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
-  color: #85878d;
+  font-size: 0.68rem;
+  color: #8d93a5;
 }
 
 .duration {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
 }
 
 .amount {
   white-space: nowrap;
-  font-size: 13px;
-  font-weight: 700;
-  color: #35a36f;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #4ade80;
 }

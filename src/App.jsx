@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar/Navbar"
-import WatchAds from "./pages/WatchAds/WatchAds";
+import Navbar from "./components/Navbar/Navbar";
+import WatchAds from "./pages/watchAds/WatchAds";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <Navbar />
 
       <Routes>
-        <Route path="/watch-ads" element={<WatchAds />} />
+        <Route path="/" element={<WatchAds />} />
       </Routes>
     </BrowserRouter>
   );
